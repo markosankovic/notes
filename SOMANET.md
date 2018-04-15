@@ -41,6 +41,25 @@ Download [build_stack_info_json.py] and then:
 
 The command above will write stack_info.json file to flash, read the file with the following command:
 
-    $ sudo ethercat foe_read stack_info.json
-    
+```
+$ sudo ethercat foe_read stack_info.json
+
+{
+  "boards": [{
+    "serial_number": "11111",
+    "version": "A.4",
+    "description": "Core C2X"
+  }, {
+    "serial_number": "22222",
+    "version": "D.2",
+    "description": "Drive 1000"
+  }, {
+    "serial_number": "33333",
+    "version": "B.1",
+    "description": "COM EtherCAT"
+  }],
+  "mac_address": 11259375
+}
+```
+
 [build_stack_info_json.py]: https://github.com/synapticon/sw_somanet-firmware/blob/develop/tools/build_stack_info_json.py
