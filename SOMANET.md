@@ -38,6 +38,9 @@ If the command above doesn't change slave state to BOOT and C2X has GREEN LED on
 Download [build_stack_info_json.py] and then:
 
     $ sudo python3 build_stack_info_json.py --mac ABCDEF --board "Core C2X" "A.4" 11111 --board "Drive 1000" "D.2" 22222 --board "COM EtherCAT" "B.1" 33333
+
+The command above will write stack_info.json file to flash, read the file with the following command:
+
     $ sudo ethercat foe_read stack_info.json
     
 [build_stack_info_json.py]: https://github.com/synapticon/sw_somanet-firmware/blob/develop/tools/build_stack_info_json.py
