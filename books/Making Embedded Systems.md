@@ -79,3 +79,14 @@ Many drivers in embedded systems are based on API used call devices in Unix syst
 
 #### Adapter Pattern
 
+It converts the interface of an object into one that is easier for a client (a higher level module). Often times, adapters are written over software APIs to hide ugly interfaces or libraries that change.
+
+The hardware interface can change without your upper-level software changing. Ideally, you can switch platforms altogether and need only to rework the underpinnings.
+
+If the interface to each level is consistent, the higher level code is pretty impervious to change. For example, if SPI flash changes to an I2C EEPROM (a different communication bus and a different type of memory), the display driver may not need to change, or may only need to replace flash functions with EEPROM ones.
+
+#### Getting Started With Other Interfaces
+
+#### Example: A Logging Interface
+
+## Chapter 3: Getting the Code Working
