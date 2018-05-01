@@ -38,3 +38,44 @@ After manufacture, the units go into the field. Bugs may be catastrophic.
 
 Engineering embedded systems is not just about strict constraints and the eventual life of the system. The challenge is figuring out which of those constraints will be a problem later in product development. You will need to predict the likely course of changes and try to design software flexible enough accommodate whichever path the application takes.
 
+## Chapter2: Creating a System Architecture
+
+Embedded systems depend heavily on their hardware. Unstable hardware leaves the software looking buggy and unreliable.
+
+### Creating System Diagrams
+
+- Architecture block diagram
+- Hierarchy of control organization chart
+- Software layering view
+
+#### The Block Diagram
+
+Model your software around the physical components. Each chip attached to the processor is an object. Think of the wires that connect the chip to the processor (the communication methods) as another set of objects.
+
+#### Hierarchy of Control
+
+#### Layered View
+
+### From Diagram to Architecture
+
+The boxes in the diagram should represent the Platonic ideals of each thing instead of a specific implementation.
+
+#### Encapsulate Modules
+
+Make interfaces between the modules that don't depend specifically on what is in them (this is encapsulation!). Use the three different architecture drawings to figure out the best places for those interfaces. Each box will probably have its own interface.
+
+#### Delegation of Tasks
+
+Which parts of the system can be broken off into separate, describable pieces that someone else can implement?
+
+#### Driver Interface: Open, Close, Read, Write, IOCTL
+
+Many drivers in embedded systems are based on API used call devices in Unix systems:
+- **open**: Opens the driver for use. Similar to (and sometimes replaced by) init.
+- **close**: Cleans up the driver, often so another subsystem can call open.
+- **read**: Reads data from the device.
+- **write**: Sends data to the device.
+- **ioctl**: (Pronunciation: eye-octal.) Stands for input/output (I/O) control and handles the features not covered by the other parts of the interface.
+
+#### Adapter Pattern
+
