@@ -25,3 +25,16 @@ In addition to a cross compiler, you'll need a cross debugger. The debugger sits
 The device that communicates between your PC and the processor is generally called an emulator, an in-circuit emulator (ICE), or a JTAG adapter.
 
 Many embedded systems are designed to have their debugging primarily done via `printf` or some sort of lighter weight logging to an otherwise unused communication port. While incredibly useful, this can also change the timing of the system, possibly leaving some bugs to be revealed only after debugging output is turned off.
+
+##### More Challenges
+
+An embedded system is designed to perform a specific task, cutting out the resources it doesn't need to accomplish its mission: Memory (RAM), Code space (ROM), Processor cycles or speed, Battery life (or power savings), Processor peripherals.
+
+The uncertainty of whether a bug is in the hardware or software can make issues difficult to solve. Unlike your computer, the software you write may be able to do actual damage to the hard- ware.
+
+Creating a system that can be manufactured for a reasonable cost is a goal that both embedded software en- gineers and hardware engineers have to keep in mind.
+
+After manufacture, the units go into the field. Bugs may be catastrophic.
+
+Engineering embedded systems is not just about strict constraints and the eventual life of the system. The challenge is figuring out which of those constraints will be a problem later in product development. You will need to predict the likely course of changes and try to design software flexible enough accommodate whichever path the application takes.
+
