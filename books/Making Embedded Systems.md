@@ -90,3 +90,46 @@ If the interface to each level is consistent, the higher level code is pretty im
 #### Example: A Logging Interface
 
 ## Chapter 3: Getting the Code Working
+
+- Reading a datasheet
+- Getting to know a new processor
+- Unraveling a schematic
+- Having a debugging toolbox
+- Testing the hardware (and software)
+
+### Hardware/Software Integration
+
+The product starts out as an idea or a need to be filled.
+
+#### Ideal Project Flow
+
+The hardware team goes through datasheets and reference designs to choose components. They find what they need for the product, at the right price, in the correct physical dimensions, with a good temperature range, etc.
+
+The hardware team creates schematics, while the software team works on the development kit. They build a tool chain with compiler and debugger, creating a debugging subsystem, trying out a few peripherals, and possibly building a sandbox for testing algorithms.
+
+Schematics are entered using a schematic capture program. Once the schematic is complete the board can be laid out.
+
+After layout, the board goes to fabrication (fab) where the printed circuit boards (PCBs) are built.
+
+After the schematic is done and layout started, the primary task for the embedded software team is to define the hardware tests and get them written while the boards being are created.
+
+When the boards come back, the hardware engineer will power them on to verify there aren't power issues, possibly verifying other purely hardware subsystems.
+
+#### Board Bring Up
+
+Make each component individually testable.
+
+When you get the PCBA, start on the lowest level pieces, at the smallest steps possible. For example, don't try out your fancy motor controller software. Instead, set an I/O device to go on for a short time and make sure the motor moves at all.
+
+### Reading a Datasheet
+
+As a software engineer, consider each chip as a separate software library. All the effort you'd need to put into learning a software package (Qt, Gtk, Boost, STL, etc.), you are going to need to put into learning your chip and peripherals.
+
+Datasheets are the API manuals for peripherals. Hardware components are described by their datasheets. Datasheets can be intimidating, as they are packed densely with information. The first thing to know about datasheets is that they aren't really written for you. They are written for an electrical engineer.
+
+The description is not the place to read a few words and skip to the next paragraph. The text is dense and probably less than a page long. Read this section thoroughly. Read it aloud or underline the important information (which could be most of the information).
+
+### Datasheet Sections You Need When Things Go Wrong
+
+- Pin out for each type of package available
+
