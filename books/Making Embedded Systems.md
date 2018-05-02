@@ -129,7 +129,23 @@ Datasheets are the API manuals for peripherals. Hardware components are describe
 
 The description is not the place to read a few words and skip to the next paragraph. The text is dense and probably less than a page long. Read this section thoroughly. Read it aloud or underline the important information (which could be most of the information).
 
-### Datasheet Sections You Need When Things Go Wrong
+#### Datasheet Sections You Need When Things Go Wrong
 
 - Pin out for each type of package available
+- Pin descriptions
+- Performance characteristics
+- Sample schematics
 
+#### Important Text for Software Developers
+
+The Application Information or the Theory of Operation.
+
+Timing diagrams show the relationship between transitions. Some transitions may be on the same signal, or the timing diagram may show the relationship between transi- tions on different signals.
+
+#### Evaluating Components Using the Datasheet
+
+Datasheets don't usually have prices because those depend on many factors, especially how many you plan to order. And datasheets don't have lead times (so be careful about designing the perfect part, it may only be available if you wait six months). Unless you are ordering online, you'll need to talk to your vendor or distributor.
+
+If they don't match (or exceed) your criteria, set the datasheet aside. The present goal is to wade through the pile of datasheets quickly; if a part doesn't meet your basic criteria, note what it fails and go on.
+
+Once the basic electrical and mechanical needs are met, the next step is to consider the typical characteristics, determining whether the part is what you need. Some common questions at this level your functional parameters: Does the component go fast enough? Does the output meet or exceed that required by your system? In a sensor or an ADC, is the noise acceptable?
