@@ -63,3 +63,9 @@ $ sudo ethercat foe_read stack_info.json
 ```
 
 [build_stack_info_json.py]: https://github.com/synapticon/sw_somanet-firmware/blob/develop/tools/build_stack_info_json.py
+
+## File Over EtherCAT
+
+    $ ethercat foe_read fs-getlist
+    $ ethercat foe_read fs-remove
+    $ ethercat foe_read stack_info.json
