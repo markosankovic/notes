@@ -64,6 +64,10 @@ $ sudo ethercat foe_read stack_info.json
 
 [build_stack_info_json.py]: https://github.com/synapticon/sw_somanet-firmware/blob/develop/tools/build_stack_info_json.py
 
+## Update Motion Master with the latest test version
+
+    $ wget -O - https://synapticon-tools.s3.amazonaws.com/motion-master/test/update_motion_master.sh | bash
+
 ## File Over EtherCAT
 
     $ ethercat foe_read fs-getlist
