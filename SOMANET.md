@@ -26,7 +26,7 @@ The following command will clear flash which means it will delete the previously
 
 Install bootloader:
 
-    $ xflash --write-all app_SOMANET_bootloader-CoreC2X-ENET_b1-UART.bin --target-file SOMANET-CoreC2X.xn --boot-partition-size 0x90000
+    $ xflash --write-all app_SOMANET_bootloader-CoreC2X-ECAT-UART.bin --target-file SOMANET-CoreC2X.xn --boot-partition 0x90000
 
 Check if bootloader is installed:
 
