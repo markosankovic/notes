@@ -17,6 +17,9 @@ Install firmware:
 
 ## Bootloader
 
+* https://github.com/synapticon/somanet_bootloader/releases
+* https://github.com/synapticon/somanet_software/blob/develop/sc_somanet_sdk/somanet_base/module_board-support/targets/SOMANET-CoreC2X.xn
+
 The following command will clear flash which means it will delete the previously installed SDK:
 
     $ xflash --erase-all --target-file SOMANET-CoreC2X.xn
