@@ -78,3 +78,59 @@ Prefer spies as they are usually the easiest way to mock services.
 
 ### Testing services with the TestBed
 
+### Angular *TestBed*
+
+The TestBed creates a dynamically-constructed Angular test module that emulates an Angular @NgModule.
+
+To test a service, you set the providers metadata property with an array of the services that you'll test or mock.
+
+    let service: ValueService;
+    
+    beforeEach(() => {
+        TestBed.configureTestingModule({ providers: [ValueService] });
+    });
+
+Then inject it inside a test by calling TestBed.get() with the service class as the argument.
+
+    it('should use ValueService', () => {
+        service = TestBed.get(ValueService);
+        expect(service.getValue()).toBe('real value');
+    });
+
+Or inside the beforeEach() if you prefer to inject the service as part of your setup.
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({ providers: [ValueService] });
+        service = TestBed.get(ValueService);
+    });
+
+When testing a service with a dependency, provide the mock in the providers array. In the following example, the mock is a spy object.
+
+    let masterService: MasterService;
+    let valueServiceSpy: jasmine.SpyObj<ValueService>;
+    
+    beforeEach(() => {
+        const spy = jasmine.createSpyObj('ValueService', ['getValue']);
+        
+        TestBed.configureTestingModule({
+            // Provide both the service-to-test and its (spy) dependency
+            providers: [
+                MasterService,
+                { provide: ValueService, useValue: spy }
+            ]
+        });
+        // Inject both the service-to-test and its (spy) dependency
+        masterService = TestBed.get(MasterService);
+        valueServiceSpy = TestBed.get(ValueService);
+    });
+
+The test consumes that spy in the same way it did earlier.
+
+    it('#getValue should return stubbed value from a spy', () => {
+        const stubValue = 'stub value';
+        valueServiceSpy.getValue.and.returnValue(stubValue);
+        
+        expect(masterService.getValue()).toBe(stubValue, 'service returned stub value');
+        expect(masterService.getValue.calls.count()).toBe(1, 'spy method was called once');
+        expect(masterService.getValue.calls.mostRecent().returnValue).toBe(stubValue);
+    });
