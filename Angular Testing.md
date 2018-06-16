@@ -134,3 +134,23 @@ The test consumes that spy in the same way it did earlier.
         expect(masterService.getValue.calls.count()).toBe(1, 'spy method was called once');
         expect(masterService.getValue.calls.mostRecent().returnValue).toBe(stubValue);
     });
+
+### Testing without *beforeEach()*
+
+    function setup() {
+        const valueServiceSpy = jasmine.createSpyObj('ValueService', ['getValue']);
+        const stubValue = 'stub value';
+        const masterService = new MasterService(valueServiceSpy);
+        
+        valueServiceSpy.getValue.and.returnValue(stubValue);
+        return { masterService, stubValue, valueServiceSpy };
+    }
+
+Each test invokes setup() in its first line:
+
+    it('#getValue should return stubbed value from a spy', () => {
+        const { masterService, stubValue, valueServiceSpy } = setup();
+        expect(masterService.getValue()).toBe(stubValue, 'service returned stub value');
+        expect(valueServiceSpy.getValue.calls.count()).toBe(1, 'spy method was called once');
+        expect(valueServiceSpy.getValue.calls.mostRecent().returnValue).toBe(stubValue);
+    });
