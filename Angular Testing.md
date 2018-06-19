@@ -199,3 +199,22 @@ You can test a data service with an injected HttpClient spy as you would test an
 Extended interactions between a data service and the HttpClient can be complex and difficult to mock with spies.
 
 The HttpClientTestingModule can make these testing scenarios more manageable.
+
+## Component Test Basics
+
+### Component class testing
+
+Test a component class on its own as you would test a service class.
+
+    @Component({
+        selector: 'lightswitch-comp',
+        template: `
+            <button (click)="clicked()">Click me!</button>
+            <span>{{message}}</span>`
+    })
+    export class LightswitchComponent {
+        isOn = false;
+        clicked() { this.isOn = !this.isOn; }
+        get message() { return `The light is ${this.isOn ? 'On' : 'Off'}`; }
+    }
+
