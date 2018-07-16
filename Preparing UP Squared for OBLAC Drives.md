@@ -1,6 +1,6 @@
 # Preparing UP Squared for OBLAC Drives
 
-Using the wireless dongle Laptone 300mbps WPS.
+Using the wireless dongle Laptone 300mbps WPS with AAEON UP Squared.
 
     $ networkctl
     IDX LINK             TYPE          OPERATIONAL SETUP
