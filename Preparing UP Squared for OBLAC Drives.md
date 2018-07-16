@@ -19,4 +19,9 @@ Ubuntu 18.04 uses [Netplan](https://netplan.io/) that either works with [Network
 
 NetworkManager uses a lot of resources. Alternative Systemd-networkd doesn't mange WiFi so wpa_supplicant is required.
 
-   $ sudo apt install wpasupplicant
+    $ sudo apt install wpasupplicant
+
+Get the WiFi name:
+
+    $ networkctl | awk '/wlan/ {print $2}'
+    wlx7cdd90d6ff9a
