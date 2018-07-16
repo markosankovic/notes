@@ -15,5 +15,4 @@ Ubuntu 18.04 uses [Netplan](https://netplan.io/) that either works with [Network
 
 
 > mode (scalar)
-> Possible access point modes are infrastructure (the default), ap (create an access point to which other devices can connect), and adhoc (peer to peer networks without a central access point). ap is only supported with NetworkManager.
-
+> Possible access point modes are infrastructure (the default), ap (create an access point to which other devices can connect), and adhoc (peer to peer networks without a central access point). **ap is only supported with NetworkManager**.
