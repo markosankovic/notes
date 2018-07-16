@@ -41,3 +41,11 @@ Connect to WiFi AP with systemd-networkd and wpa_supplicant:
     
     [Network]
     DHCP=yes
+
+Get device capabilities:
+
+    $ iw list
+
+https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
+https://wiki.gentoo.org/wiki/Hostapd
+
