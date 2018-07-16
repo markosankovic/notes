@@ -11,10 +11,9 @@ Using the USB wireless dongle Laptone 300mbps WPS with AAEON UP Squared.
     
     4 links listed.
 
-Ubuntu 18.04 uses [Netplan](https://netplan.io/) that either works with [NetworkManager](https://help.ubuntu.com/community/NetworkManager) or [Systemd-networkd](http://manpages.ubuntu.com/manpages/bionic/man5/systemd.network.5.html). In the documenetation of Netplan for properties for device type wifis:
+Ubuntu 18.04 uses [Netplan](https://netplan.io/) that either works with [NetworkManager](https://help.ubuntu.com/community/NetworkManager) or [Systemd-networkd](http://manpages.ubuntu.com/manpages/bionic/man5/systemd.network.5.html). From the Netplan documentation:
 
 
 > mode (scalar)
 > Possible access point modes are infrastructure (the default), ap (create an access point to which other devices can connect), and adhoc (peer to peer networks without a central access point). ap is only supported with NetworkManager.
-
 
