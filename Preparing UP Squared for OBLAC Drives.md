@@ -25,3 +25,19 @@ Get the WiFi name:
 
     $ networkctl | awk '/wlan/ {print $2}'
     wlx7cdd90d6ff9a
+
+Connect to WiFi AP with systemd-networkd and wpa_supplicant:
+
+    $ sudo wpa_passphrase my_ssid my_pass >> /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
+    $ sudo cat /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
+    network={
+        ssid="my_ssid"
+        #psk="my_pass"
+        psk=12345678901234567809876543aaccddeeff
+    }
+    $ sudo vim /etc/systemd/network/wireless.network
+    [Match]
+    Name=wlx7cdd90d6ff9a
+    
+    [Network]
+    DHCP=yes
