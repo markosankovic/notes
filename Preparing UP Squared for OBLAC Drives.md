@@ -17,7 +17,7 @@ Ubuntu 18.04 uses [Netplan](https://netplan.io/) that either works with [Network
 > mode (scalar)
 > Possible access point modes are infrastructure (the default), ap (create an access point to which other devices can connect), and adhoc (peer to peer networks without a central access point). **ap is only supported with NetworkManager**.
 
-NetworkManager uses a lot of resources. Alternative Systemd-networkd doesn't mange WiFi so wpa_supplicant is required.
+NetworkManager uses a lot of resources. Alternative systemd-networkd does not natively support wifi, so you need wpasupplicant installed if you let the networkd renderer handle wifi.
 
     $ sudo apt install wpasupplicant
 
