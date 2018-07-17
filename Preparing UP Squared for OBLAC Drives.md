@@ -48,4 +48,5 @@ Get device capabilities:
 
 https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
 https://wiki.gentoo.org/wiki/Hostapd
+https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
 
