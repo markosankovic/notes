@@ -46,6 +46,26 @@ Get device capabilities:
 
     $ iw list
 
+## /etc/systemd/network/wireless.network
+
+    [Match]
+    Name=wl*
+    
+    [Network]
+    DHCPServer=yes
+    
+    [Address]
+    Address=192.168.128.1/24
+    Broadcast=192.168.128.255
+    
+    [DHCPServer]
+    PoolOffset=10
+    PoolSize=10
+    EmitDNS=yes
+    DNS=8.8.8.8,8.8.4.4
+    DefaultLeaseTimeSec=600
+    MaxLeaseTimeSec=7200
+
 ## /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
 
     ap_scan=2
@@ -75,5 +95,6 @@ https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
 https://wiki.gentoo.org/wiki/Hostapd
 https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
 https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
+https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
 
 
