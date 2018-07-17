@@ -46,7 +46,34 @@ Get device capabilities:
 
     $ iw list
 
+## /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
+
+    ap_scan=2
+
+    network = {
+        ssid="oblac-drives"
+        mode=2
+        key_mgmt=NONE
+        frequency=2437
+    }
+
+## Disable wait online service
+
+Use
+
+    $ systemctl disable systemd-networkd-wait-online.service
+    
+to disable the wait-online service to prevent the system from waiting on a network connection, and use
+
+    $ systemctl mask systemd-networkd-wait-online.service
+
+to prevent the service from starting if requested by another service (the service is symlinked to /dev/null).
+
+## Links
+
 https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
 https://wiki.gentoo.org/wiki/Hostapd
 https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
+https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
+
 
