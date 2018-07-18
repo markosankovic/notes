@@ -46,28 +46,36 @@ Get device capabilities:
 
     $ iw list
 
-## /etc/systemd/network/wireless.network
+## /etc/systemd/network/wired.network
+    [Match]
+    Name=enp2s0
 
+    [Network]
+    DHCP=ipv4
+    IPForward=yes
+    IPMasquerade=yes
+
+## /etc/systemd/network/wireless.network
     [Match]
     Name=wl*
-    
+
     [Network]
     DHCPServer=yes
-    
+
     [Address]
-    Address=192.168.128.1/24
+    Address=192.168.0.1/24
     Broadcast=192.168.128.255
-    
+
     [DHCPServer]
     PoolOffset=10
     PoolSize=10
     EmitDNS=yes
-    DNS=8.8.8.8,8.8.4.4
+    DNS=8.8.8.8
+    DNS=8.8.4.4
     DefaultLeaseTimeSec=600
     MaxLeaseTimeSec=7200
 
 ## /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
-
     ap_scan=2
 
     network = {
@@ -76,6 +84,16 @@ Get device capabilities:
         key_mgmt=NONE
         frequency=2437
     }
+    
+Enable wpa_supplicant for interface
+
+    $ sudo systemctl enable wpa_supplicant@wlx7cdd90d6f9a.service
+
+## /etc/ufw/sysctl.conf
+
+Uncomment
+
+    net/ipv4/ip_forward=1
 
 ## Disable wait online service
 
@@ -91,10 +109,11 @@ to prevent the service from starting if requested by another service (the servic
 
 ## Links
 
+https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
 https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
 https://wiki.gentoo.org/wiki/Hostapd
 https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
 https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
+https://askubuntu.com/questions/802643/port-forwarding-with-dnat-not-working
 https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
-
-
+https://wiki.archlinux.org/index.php/WPA_supplicant
