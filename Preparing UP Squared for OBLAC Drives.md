@@ -107,6 +107,24 @@ to disable the wait-online service to prevent the system from waiting on a netwo
 
 to prevent the service from starting if requested by another service (the service is symlinked to /dev/null).
 
+## /etc/ufw/before.rules
+
+Add the following to the top of the file just after the header comments
+
+    # NAT table rules
+    *nat
+    :POSTROUTING ACCEPT [0:0]
+    
+    # Forward traffic from enp2s0
+    -A POSTROUTING -s 192.168.0.0/24 -o enp2s0 -j MASQUERADE
+    
+    # don't delete the 'COMMIT' line or these rules won't be processed
+    COMMIT
+
+Disable and re-enable ufw to apply the changes:
+
+    $ sudo ufw disable && sudo ufw enable
+
 ## Links
 
 https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
