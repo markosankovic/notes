@@ -153,6 +153,8 @@ Disable and re-enable ufw to apply the changes:
                 optional: true
         version: 2
 
+    $ netplan apply
+
 ## Links
 
 - https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
