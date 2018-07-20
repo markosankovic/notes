@@ -213,6 +213,25 @@ Install Ubuntu Server, use *ubuntu* for username and password, *oblac-drives* fo
     $ systemctl enable wpa_supplicant@wlx7cdd90d6f9a.service
     $ systemctl disable systemd-networkd-wait-online.service
     $ systemctl mask systemd-networkd-wait-online.service
+    $ vim /etc/ufw/before.rules
+    # NAT table rules
+    *nat
+    :POSTROUTING ACCEPT [0:0]
+
+    # Forward traffic from enp2s0
+    -A POSTROUTING -s 192.168.0.0/24 -o enp2s0 -j MASQUERADE
+
+    # don't delete the 'COMMIT' line or these rules won't be processed
+    COMMIT
+    
+    ...
+    $ vim /etc/default/ufw
+    DEFAULT_INPUT_POLICY="ACCEPT"
+    DEFAULT_FORWARD_POLICY="ACCEPT"
+    $ vim /etc/ufw/sysctl.conf
+    net/ipv4/ip_forward=1
+    $ ufw disable && sudo ufw enable
+    $ reboot
 
 ## Links
 
