@@ -64,7 +64,7 @@ Get device capabilities:
 
     [Address]
     Address=192.168.0.1/24
-    Broadcast=192.168.128.255
+    Broadcast=192.168.0.255
 
     [DHCPServer]
     PoolOffset=10
@@ -170,3 +170,4 @@ Running `$ journal -xe` will show any errors with wpa_supplicant and netplan.
 - https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
 - https://wiki.archlinux.org/index.php/WPA_supplicant
 - https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html
+- https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/netplan-how-to-configure-static-ip-address-in-ubuntu-18-04-using-netplan.html
