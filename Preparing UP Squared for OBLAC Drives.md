@@ -84,10 +84,15 @@ Get device capabilities:
         key_mgmt=NONE
         frequency=2437
     }
-    
+
 Enable wpa_supplicant for interface
 
     $ sudo systemctl enable wpa_supplicant@wlx7cdd90d6f9a.service
+
+## /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    network: {config: disabled}
+
+Remove everything from `/etc/netplan/`.
 
 ## /etc/ufw/sysctl.conf
 
