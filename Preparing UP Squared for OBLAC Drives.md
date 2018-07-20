@@ -164,6 +164,56 @@ Disable and re-enable ufw to apply the changes:
 
 Running `$ journal -xe` will show any errors with wpa_supplicant and netplan.
 
+## Steps
+
+Install Ubuntu Server, use *ubuntu* for username and password, *oblac-drives* for hostname.
+
+    $ sudo su
+    $ rm /etc/netplan/*
+    $ vim /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    network: {config: disabled}
+    $ netplan generate && netplan apply
+    $ vim /etc/systemd/network/wired.network
+    [Match]
+    Name=enp2s0
+
+    [Network]
+    DHCP=ipv4
+    $ vim /etc/systemd/network/wireless.network
+    [Match]
+    Name=wl*
+
+    [Network]
+    DHCPServer=yes
+
+    [Address]
+    Address=192.168.0.1/24
+    Broadcast=192.168.0.255
+
+    [DHCPServer]
+    PoolOffset=10
+    PoolSize=10
+    EmitDNS=yes
+    DNS=8.8.8.8
+    DNS=8.8.4.4
+    DefaultLeaseTimeSec=600
+    MaxLeaseTimeSec=7200
+    $ apt install wpasupplicant
+    $ networkctl | awk '/wlan/ {print $2}'
+    wlx7cdd90d6ff9a
+    $ vim /etc/wpa_supplicant/wpa_supplicant-wlx7cdd90d6ff9a.conf
+    ap_scan=2
+
+    network = {
+        ssid="oblac-drives"
+        mode=2
+        key_mgmt=NONE
+        frequency=2437
+    }
+    $ systemctl enable wpa_supplicant@wlx7cdd90d6f9a.service
+    $ systemctl disable systemd-networkd-wait-online.service
+    $ systemctl mask systemd-networkd-wait-online.service
+
 ## Links
 
 - https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
