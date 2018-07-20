@@ -155,6 +155,10 @@ Disable and re-enable ufw to apply the changes:
 
     $ netplan apply
 
+## journal -xe
+
+Running `$ journal -xe` will show any errors with wpa_supplicant and netplan.
+
 ## Links
 
 - https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
