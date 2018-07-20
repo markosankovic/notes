@@ -155,12 +155,12 @@ Disable and re-enable ufw to apply the changes:
 
 ## Links
 
-https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
-https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
-https://wiki.gentoo.org/wiki/Hostapd
-https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
-https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
-https://askubuntu.com/questions/802643/port-forwarding-with-dnat-not-working
-https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
-https://wiki.archlinux.org/index.php/WPA_supplicant
-https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html
+- https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
+- https://forum.manjaro.org/t/how-to-use-systemd-networkd-to-manage-your-wifi/1557
+- https://wiki.gentoo.org/wiki/Hostapd
+- https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759
+- https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
+- https://askubuntu.com/questions/802643/port-forwarding-with-dnat-not-working
+- https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
+- https://wiki.archlinux.org/index.php/WPA_supplicant
+- https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html
