@@ -125,6 +125,34 @@ Disable and re-enable ufw to apply the changes:
 
     $ sudo ufw disable && sudo ufw enable
 
+## netplan
+
+### /etc/netplan/60-wifi.yml
+    nework:
+        wifis:
+            wlx7cdd90d6ff9a:
+                access-points:
+                    "synapticon-guest":
+                        password: "webui..."
+                addresses: []
+                dhcp4: true
+                optional: true
+        version: 2
+
+### /etc/netplan/50-cloud-init.yaml
+    # This file is generated from information provided by
+    # the datasource. Changes to it will not persist across an instance.
+    # To disable cloud-init's network configuration capabilities, write a file
+    # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+    # network: {config: disabled}
+    network:
+        ethernets:
+            enp2s0
+                addresses: []
+                dhcp4: true
+                optional: true
+        version: 2
+
 ## Links
 
 https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
@@ -135,3 +163,4 @@ https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-netwo
 https://askubuntu.com/questions/802643/port-forwarding-with-dnat-not-working
 https://unix.stackexchange.com/questions/361558/difference-between-systemd-wpa-supplicant-service-and-wpa-supplicantwlan0-servi
 https://wiki.archlinux.org/index.php/WPA_supplicant
+https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html
