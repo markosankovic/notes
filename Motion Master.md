@@ -7,4 +7,4 @@
 * Create and run Heartbeat thread. This object uses Notifier to send Motion Master heartbeat to clients. Notifier eventually uses the instance of forwarder_socket to send message.
 * Ttry to set max thread priority.
 * Instantiate and run three objects as threads: EthercatMaster, Monitor, Server. EthercatMaster can get slave count, slave by id, slave type, state and it builds vector of CiA402_Drive instances. Monitor sends single axis feedback, error updates and device status updates using the Notifier. Server is responsible for instantiating CommandWorker classes. It pushes command workers to thread pool and one command worker is done executing it clears it. Server also keeps track client heartbeat and if client that has control over a drive is gone it will send quick stop to the drive. At the end it sends command worker responses back to clients (not quite sure how this works).
-
+* Execution of the main function in somanet_motion_master.cpp ends when the EthercatMaster, Server and Monitor threads execution completes.
