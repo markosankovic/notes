@@ -1,5 +1,9 @@
 # SOMANET
 
+## Motor Configs
+
+https://github.com/synapticon/somanet_software/tree/develop/sc_somanet_sdk/configuration_parameters/motor_configs
+
 ## ESI
 
 Split ESI file into parts for storing onto slaves:
