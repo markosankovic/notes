@@ -12,6 +12,6 @@ Follow [Ubuntu 18.04 prime-select intel is not powering off the nvidia card](htt
     $ sudo visudo
     marko ALL=(ALL) NOPASSWD: ALL
 
-Settings / Region & Language / Add an Input Source.
-Settings / Online Accounts / Google.
-Settings / Privacy / Screen Lock.
+- Settings / Region & Language / Add an Input Source.
+- Settings / Online Accounts / Google.
+- Settings / Privacy / Screen Lock.
