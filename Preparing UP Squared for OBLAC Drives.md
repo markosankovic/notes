@@ -235,7 +235,7 @@ Install Ubuntu Server, use *ubuntu* for username and password, *oblac-drives* fo
 
 ## Preparing 3 boxes for China 17.09.2018.
 
-- Download ~~ubuntu-16.04.5-server-amd64.iso~~ ubuntu-18.04.1-server-amd64.iso and Make Startup Disk with Startup Disk Creator.
+- Download ~~ubuntu-16.04.5-server-amd64.iso~~ ~~ubuntu-18.04.1-server-amd64.iso~~ ubuntu-18.04-server-amd64.iso and Make Startup Disk with Startup Disk Creator.
 - Install Ubuntu Server on a box:
   - Use the default settings for language and keyboard.
   - Select enp2s0 as the primary network interface, the other enp3s0 will be used for EtherCAT. The primary interface is located above in level with HDMI.
@@ -253,6 +253,8 @@ Install Ubuntu Server, use *ubuntu* for username and password, *oblac-drives* fo
 - `cd oblac-drives-installer`
 - `git checkout up2`
 - `./up2.sh` this time TASK [up2: Copy 99-disable-network-config.cfg to /etc/cloud/cloud.cfg.d] failed, it seems to be related to the version of Ubuntu Server. Must use Ubuntu Server 18.04.1 LTS.
+
+Ubuntu Server 18.04.1 comes with kernel 4.15 that cannot be used with EtherCAT Master (without the changes made by Slava). It also changed the sources so sshpass cannot be installed and Ansible cannot be used. Must revert back to 18.04.
 
 ## Links
 
