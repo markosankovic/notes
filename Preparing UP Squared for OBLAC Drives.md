@@ -233,6 +233,27 @@ Install Ubuntu Server, use *ubuntu* for username and password, *oblac-drives* fo
     $ ufw disable && sudo ufw enable
     $ reboot
 
+## Preparing 3 boxes for China 17.09.2018.
+
+- Download ~~ubuntu-16.04.5-server-amd64.iso~~ ubuntu-18.04.1-server-amd64.iso and Make Startup Disk with Startup Disk Creator.
+- Install Ubuntu Server on a box:
+  - Use the default settings for language and keyboard.
+  - Select enp2s0 as the primary network interface, the other enp3s0 will be used for EtherCAT. The primary interface is located above in level with HDMI.
+  - Enter synapticon for hostname.
+  - Enter ubuntu for username and password (consider using generated password).
+  - Don't encrypt home directory.
+  - Use default Berlin for TZ.
+  - Partition disks: Guided - use entire disk.
+  - Select disk to partition MMC/SD card #1 (mmcblk0) - 31.3 GB MMC HBG4a2.
+  - No proxy.
+  - No automatic updates.
+  - Software selection: DNS server, standard system utilities and OpenSSH server.
+- Login with ubuntu/ubuntu after restart.
+- `git clone https://github.com/synapticon/oblac-drives-installer.git`
+- `cd oblac-drives-installer`
+- `git checkout up2`
+- `./up2.sh` this time TASK [up2: Copy 99-disable-network-config.cfg to /etc/cloud/cloud.cfg.d] failed, it seems to be related to the version of Ubuntu Server. Must use Ubuntu Server 18.04.1 LTS.
+
 ## Links
 
 - https://help.ubuntu.com/lts/serverguide/firewall.html#ip-masquerading
