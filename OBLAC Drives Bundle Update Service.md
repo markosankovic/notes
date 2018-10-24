@@ -10,3 +10,7 @@
     $ sudo systemctl daemon-reload
     $ sudo systemctl restart docker.service
     $ curl http://localhost:2376/version
+
+## Links
+
+- https://success.docker.com/article/how-do-i-enable-the-remote-api-for-dockerd
