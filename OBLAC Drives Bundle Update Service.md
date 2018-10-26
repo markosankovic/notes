@@ -6,7 +6,7 @@
     $ sudo vi /etc/systemd/system/docker.service.d/override.conf
     [Service]
     ExecStart=
-    ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376
+    ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376 --api-cors-header="http://localhost:4123"
     $ sudo systemctl daemon-reload
     $ sudo systemctl restart docker.service
     $ curl http://localhost:2376/version
