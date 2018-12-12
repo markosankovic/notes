@@ -2,7 +2,7 @@
 
 When selecting a motor, there's a long list of questions that need to be addressed:
 
-- Should the motor be direct current (DC) or alteranting current (AC)?
+- Should the motor be direct current (DC) or alternating current (AC)?
 - For a DC motor, should it be brushed or brushless?
 - For a brushed DC motor, should it be a permanent magnet, series-wound, or shunt-wound motor?
 - For a brushless DC motor, should it be an inrunner or an outrunner?
@@ -26,7 +26,7 @@ This experiment demonstrates the interaction between the two basic elements of a
 
 In France, Andre-Marie Ampere developed equations relating current in a wire to the magnetic field around the wire. I England, Michael Faraday devised a series of experiments that demonstrate how current-carrying wires move in the presence of a magnetic field.
 
-Instead of placing the wirte outside a compass, Anyos Jedlik wound it into coils and placed the coils inside a magnetic field. As current changes inside the coils, the coils rotate.
+Instead of placing the wires outside a compass, Anyos Jedlik wound it into coils and placed the coils inside a magnetic field. As current changes inside the coils, the coils rotate.
 
 Today's rotary electric motors have essentially the same structure as Jedlik's self-rotor:
 
@@ -94,6 +94,6 @@ When it comes to electric motors there are four levels of understanding:
 1. **Hobbyist** - "When I apply voltage and current, the motor's shaft turns."
 2. **Make** - "The motor's shaft turns because the electromagnets in the stator are energized in sequence. The rotor's speed is proportional to voltage and the torque is proportional to current."
 3. **Engineer** - "The motor's impedance can be represented by the phasor Ra + jwLa. If the input voltage is Vm sin(wt + 90deg), the torque and speed can be computed as..."
-4. **Scientist** - "The electromagentic tensor traveling through the conductor aligns the somains in the ferromagnetic material. This produces a magnetic vector field proportional to the material's permeability."
+4. **Scientist** - "The electromagentic tensor traveling through the conductor aligns the domains in the ferromagnetic material. This produces a magnetic vector field proportional to the material's permeability."
 
 On the outside, a motor has leads that deliver current and voltage to the motor and a shaft that delivers torque and speed to the load.
