@@ -91,3 +91,12 @@ $ sudo ethercat foe_read stack_info.json
     $ ethercat foe_read fs-getlist
     $ ethercat foe_read fs-remove
     $ ethercat foe_read stack_info.json
+
+## Compiling and Running
+
+    xmake -j DRIVE_BOARD=Drive1000-rev-d.bsp
+    make release clean
+    make distclean
+    make release package
+
+`somanet_software/sw_applications/app_motion_drive` is the main application.
