@@ -193,3 +193,11 @@ Many vendors specify a motor's peak efficiency parameters. You should always cho
 The penalty for motor efficiency is more than just wasted power. The copper loss in the armature produces heat equal to I²Rm. If this heat grows too large, it can damage the motor and the surrounding circuitry.
 
 ## 2.5 Summary
+
+When you're selecting a motor, it's important to clearly understand the specifications provided by the manufacturer. These specifications center on four physical quantities: current, voltage, speed and torque.
+
+We concern ourselves with two extreme conditions: the no-load condition (rotates quickly without load) and the stall condition (motor fully exerts itself but fails to move the load). These conditions play a central role in determining a motor's torque-speed curve.
+
+Two important electrical characteristics are iron loss and copper loss. Iron loss is the current needed to energize the motor's electromagnets. Copper loss is the resistive heating (I^2R) within the armature.
+
+To keep wasted power to a minimum, the motor's peak efficiency should be reached during normal operation. Efficiency is the ratio of mechanical power to electrical power.

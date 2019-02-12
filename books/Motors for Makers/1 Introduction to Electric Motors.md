@@ -24,7 +24,7 @@ This experiment demonstrates the interaction between the two basic elements of a
 
 ### 1.1.2 Jedlik's Self-Rotor
 
-In France, Andre-Marie Ampere developed equations relating current in a wire to the magnetic field around the wire. I England, Michael Faraday devised a series of experiments that demonstrate how current-carrying wires move in the presence of a magnetic field.
+In France, Andre-Marie Ampere developed equations relating current in a wire to the magnetic field around the wire. In England, Michael Faraday devised a series of experiments that demonstrate how current-carrying wires move in the presence of a magnetic field.
 
 Instead of placing the wires outside a compass, Anyos Jedlik wound it into coils and placed the coils inside a magnetic field. As current changes inside the coils, the coils rotate.
 
@@ -85,7 +85,7 @@ The majority of AC motors are asynchronous, which means that their speed isn't s
 
 ## 1.4 Goals and Structure
 
-The nature of a motor control circuit depends on the type of motor. That is, a circuit intended to control a stepper motor can't provide proper control of a servomotor, and you can't control a DC motor with and AC motor control circuit.
+The nature of a motor control circuit depends on the type of motor. That is, a circuit intended to control a stepper motor can't provide proper control of a servomotor, and you can't control a DC motor with an AC motor control circuit.
 
 ## 1.5 Summary
 
