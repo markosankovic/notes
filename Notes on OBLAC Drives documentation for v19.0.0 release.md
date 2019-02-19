@@ -34,9 +34,9 @@ We must update all screenshots, images and animated gifs.
 > Synapticon OBLAC Drives is delivered as a VMware Image to run a Linux virtual machine containing Synapticon EtherCAT Tuning Tools.
 
 > OBLAC Drives is delivered through the downloadable virtual machine (OBLAC Drives VM) or a physical machine<sup>[[1]]</sup> (OBLAC Drives Box).
-> Why can't I just install OBLAC Drives? OBLAC Drives uses the EtherCAT Master that runs as a Linux kernel module and it consists of multiple running services on a host. In order to support all major platforms we created the virtual machine based on Linux OS, that runs EtherCAT Master as a kernel module and all of the required services.
+> Why can't I just install OBLAC Drives? OBLAC Drives uses the EtherCAT Master that runs as a Linux kernel module and it consists of multiple  services running on a host. In order to support all major platforms we created the virtual machine based on Linux OS, that runs EtherCAT Master as a kernel module and all of the required services.
 
-**Rationale**: We actually deliver the virtual machine in OVA format which stands for Open Virtualization Format. VMware is not the only virtualization software that can import it, but VirtualBox as well and with small changes to network adapter names it is possible to use it. Anyway, we recommend VMware because it works out-of-box. The second question/answer paragraph is there for users that are used to desktop applications and download, install, run way of getting software. It states the reasons why we must run OBLAC Drives in a virtual machine: 1) multi-platform support, 2) due to multiple processes/services that make the application, 3) due to EtherCAT Master which must run under Linux OS.
+**Rationale**:  Why *Synapticon OBLAC Drives*, from website it's *SOMANET OBLAC Drives*. Is it okay to remove SOMANET? We actually deliver the virtual machine in OVA format which stands for Open Virtualization Format. VMware is not the only virtualization software that can import it, but VirtualBox as well and with small changes to network adapter names it is possible to use it. Anyway, we recommend VMware because it works out--ofbox. The second question/answer paragraph is there for users that are used to desktop applications and download, install, run way of getting software. It states the reasons why we must run OBLAC Drives in a virtual machine: 1) multi-platform support, 2) due to multiple processes/services that make the application, 3) due to EtherCAT Master which must run under Linux OS. Introducing *OBLAC Drives VM* and *OBLAC Drives Box* makes a nice disctinction.
 
 > Set up your OBLAC Box - OBLAC Box is a convenient way to commission your Node with the latest version of OBLAC Drives.
 
@@ -48,15 +48,15 @@ We must update all screenshots, images and animated gifs.
 
 > OBLAC Drives VM - OBLAC Drives VM is downloadable virtual machine that comes preinstalled with OBLAC Drives.
 
-**Rationale**: *Installation Guide* is ambiguous. OBLAC Drives VM page provides instructions on how to download, open and conigure VM on the target platform. I think that names *OBLAC Drives Box* and *OBLAC Drives VM* make a good contrast. In that regard we are going to rename oblac-drives-box.ova to simply oblac-drives.ova.
+**Rationale**: *Installation Guide* is ambiguous. OBLAC Drives VM page provides instructions on how to download, open and configure VM on the target platform. I think that names *OBLAC Drives Box* and *OBLAC Drives VM* make a good contrast. In that regard we are going to rename oblac-drives-box.ova to just oblac-drives.ova (as is the case now download link).
 
 > Set up your drive system - How to set parameters for your Motor and Sensors correctly.
 > Tune your drive - Each motor needs to be tuned before it is operational.
 
-> Set up your servo drive - Instruction on how to install firmware and configure your motor, brake and sensors.
-> Tune your servo drive - Instruction on how to do manual and automatic tuning of your servo drive.
+> Set up your servo drive - Instructions on how to install firmware and configure your motor, brake and sensors.
+> Tune your servo drive - Instructions on how to do manual and automatic tuning of your servo drive.
 
-**Rationale**: What is the drive system? How is it different than servo drive? For *Tune your drive*, what is *drive* is it *servo drive*? What is the difference between servo system and servo drive?
+**Rationale**: What is the drive system? How is it different than servo drive? For *Tune your drive*, what is *drive* is it *servo drive*? What is the difference between servo system and servo drive? Should we maybe use *SOMANET Servo Node* instead of *servo drive*.
 
 > Tutorial: Motion Control System - Use the playground to rotate the motor to defined position or at defined torque.
 
@@ -68,7 +68,7 @@ We must update all screenshots, images and animated gifs.
 
 > Update OBLAC Drives - Use the provided OBLAC Drives Update Service to install and run any version of OBLAC Drives.
 
-**Rationale**: *Update tool* is ambiguous. We also have a kind of update tool for SOMANET Software. In order to avoid misunderstanding in writing and conversation things should be called by their full name, so instead of *update tool* it's *OBLAC Drives Update Service*. With OBLAC Drives Update Service users can install any version of OBLAC Drives, *at any time* is surplus.
+**Rationale**: *Update tool* is ambiguous. We also provide a kind of update tool for SOMANET Software. In order to avoid misunderstanding in writing and conversation things should be called by their full name, so instead of *update tool* it's *OBLAC Drives Update Service*. With OBLAC Drives Update Service users can install any version of OBLAC Drives, *at any time* is surplus.
 
 Gif https://doc.synapticon.com/_images/Autotunining_OBLAC_Drives2.gif must be replaced with the latest look of OBLAC Drives.
 
@@ -80,26 +80,40 @@ Gif https://doc.synapticon.com/_images/Autotunining_OBLAC_Drives2.gif must be re
 
 **Rationale**: Not quite sure about the description. Anyway, whatever the description it has to be consistent.
 
+> Installation
+> Optionally, connect the box to your local area network using the upper LAN port. This is necessary if you want to commission the SOMANET Servo Node through the network rather than via wireless.
+
+> ... This will allow you to access OBLAC Drives tool over the local area network rather than having to connect to OBLAC Drives Box over WiFi.
+
+**Rationale**: Provisioning is really done over EtherCAT. Only the access to OBLAC Drives application is somewhat different whether you use WiFi access or local area network.
+
 > Connect to the GUI
 
 > Open OBLAC Drives
 
-**Rationale**: We are not really connecting, that implies some kind of software connection. Wa are opening an URL in our browser that will serve the OBLAC Drives application.
-Sticker image must be updated. The IP address is not preferred anymore, but rather the assigned domain name. So, the application is available at http://oblac-drives-*network-name*.local and *network-name* is really a unique OBLAC Drives Box identifier. For Windows the mDNS domain name will not resolve without having Bonjour software, for then the IP address will work.
+**Rationale**: We are not really connecting, that implies some kind of software connection. Wa are opening an URL in our browser that will serve the OBLAC Drives application. It could also be *Access OBLAC Drives*.
+Sticker image must be updated. The IP address is not preferred anymore, but rather the assigned domain name. So, the application is available at http://oblac-drives-*network-name*.local and *network-name* is really a unique OBLAC Drives Box identifier. For Windows the mDNS domain name will not resolve without having Bonjour software, so instruction on installation are required.
 
+I would say the preferred method to access OBLAC Drive application is to have box connected to a local network. WiFi access in documentation should come later, with something like: 'It is also possible to connect to OBLAC Drives Box over Wifi...'.
+
+> Open a web browser to the IP stated on the sticker (192.168.0.1 by default)
 > A pre-installed version of OBLAC Drives will open. You can access your Node by WiFi.
 
-> This not required and especially You can access your Node by WiFi. What is Node here? It's better to say in step 2: Open OBLAC Drives in your browser by navigating to http://oblac-drives-12345fad.local
+> This not required and especially *You can access your Node by WiFi*. What is Node here? It's better to say in step 2: Open OBLAC Drives in your browser by navigating to http://oblac-drives-12345fad.local
 
-My personal preference is use first uppercase letter for the Internet<sup>[[2]]</sup>.
+My personal preference is to use first uppercase letter for the Internet<sup>[[2]]</sup>.
 
 > Accessing the Internet
 
-Here we need to explain that it is possible to use OBLAC Drives Box offline and to install and run the previous versions of OBLAC Drives. Newer versions of OBLAC Drives that get installed will be cached on the box, but they will have to be downloaded from the Internet.
+Remove this section. We need to add another link below OBLAC Drives Box and OBLAC Drives VM called Updating OBLAC Drives where we are going to describe how to use OBLAC Drives Update Service, how we match the supported firmwares etc. We need to explain that it is possible to use OBLAC Drives Box offline and to install and run the previous versions of OBLAC Drives. Newer versions of OBLAC Drives that get installed will be cached on the box, but they will have to be downloaded from the Internet.
 
 OBLAC Drives Box acts as NAT and so when connected over WiFi and if the box is connected to the Internet over LAN then the connected computer will have the Internet access.
 
 We must remove IP discovery. That is not requred anymore and the service (IP Addr Service) will be removed.
+
+> That’s it! You may now proceed to Commision your Node
+
+> That's it! You may now proceed to commision your SOMANTE Servo Node.
 
 ## https://doc.synapticon.com/oblac_drives/oblac_drives_setup/index.html
 
@@ -133,6 +147,7 @@ It is impossible to select a firmware that doesn't fit the version of the Drive 
 
 [1]: https://searchenterprisedesktop.techtarget.com/definition/physical-computer
 [2]: https://en.wikipedia.org/wiki/Capitalization_of_Internet
+[3]: http://blog.hoxnox.com/gentoo/wifi-hotspot.html
 
 ## Draft
 
