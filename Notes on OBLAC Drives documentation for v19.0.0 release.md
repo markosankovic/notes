@@ -117,19 +117,54 @@ We must remove IP discovery. That is not requred anymore and the service (IP Add
 
 ## https://doc.synapticon.com/oblac_drives/oblac_drives_setup/index.html
 
+> System Requirements
+
+> I would replace it Prerequeisite or Required Software and write that OBLAC Drives VM is a virtual machine that you as a user should run on VMware Player version 14 or above for Windows and Linux and VMware Function 10 for macOS and provide links to VMware website.
+
+> Note
+> OBLAC Drives runs in your browser and has been successfully tested with Google Chrome (Version 63.0.3239.132 and above). Other browsers or older versions of Chrome may also be supported but can’t be recomended.
+
+> OBLAC Drives is application that runs in a Web Browser. We recommend Google Chrome as of version 63. OBLAC Drives will work on other browsers, but they are not recommended.
+
 List of operating systems: well, Debian as well because the VM runs Debian.
 Works on VMware Workstation Player 15 as well.
+
+> Download the latest OBLAC Drives image
+
+> Latest and OBLAC Drives image should not be used, but rather Download OBLAC Drives VM.
 
 > 3. Open a virtual machine
 > 4. Select the downloaded OBLAC Drives image (OVA file) and import it to VMware Player
 
-A bit strange, shouldn't this be one step instead: Click on File/Open a Virtual Machine and select the download oblac-drives.ova file.
+A bit strange, shouldn't this be one step instead: Click on File/Open a Virtual Machine and select the downloaded OBLAC Drives VM (oblac-drives.ova) file.
 
 > If you get a warning that the import failed, just click “Retry” and it will run.
 
 We should write the reason why the import fails.
 
-Step 5. should only have the network configuration, processor is not required any more. Images must be replaced.
+> Step 5. should only have the network configuration, processor is not required any more. Images must be replaced.
+
+> There should be two network adapters available - one set to NAT and one set to bridged. I would write bridged as Bridged (Automatic) exactly as on the screenshot.
+
+> Add them if any of them are missing
+
+> Remove this, they are always going to be there, this is part of te ova file.
+
+> Press OK to save changes
+
+> Obvious by I would write something like press OK in Automatic Bridging Settings dialog and then OK on Virtual Machine Settings dialog to save the changes
+
+> Play the virtual machine
+
+> Actually, the VMware term is *Power On*, so maybe the full instruction right click on oblac-drives-box in the list of VMs and then click on *Power On*
+
+> Connecting to OBLAC Drives
+
+> Open OBLAC Drives
+
+> Shutting down the Virtual Machine
+
+> I would remove this, or add it as a note on the bottom of Getting Started. It is not that much important to require its own section.
 
 Replace image for Welcome screen. It looks a bit different now and runs Debian.
 
