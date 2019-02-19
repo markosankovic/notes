@@ -23,6 +23,11 @@ Scope features like math, triggers, recording are a lie, because we don't have t
 
 We must update all screenshots, images and animated gifs.
 
+Add Cogging Torque Compensation section.
+Add OBLAC Drives Update Service section.
+
+Two links at the top. One that downloads the VM and the other that takes user to the documentation.
+
 ## https://doc.synapticon.com/oblac_drives/index.html
 
 > OBLAC Drives makes operating SOMANET drives based on EtherCAT a breeze. It guides the user through the setup process, supports configuration and tuning of the SOMANET drive stack and makes the operation and first steps in turning a motor as easy as possible.
@@ -76,14 +81,14 @@ Gif https://doc.synapticon.com/_images/Autotunining_OBLAC_Drives2.gif must be re
 
 > OBLAC Drives Box is a small computer with WiFi access that runs a minimal operating system and EtherCAT master. The OBLAC Drives commissioning software and update service are pre-installed.
 
-> OBLAC Drives Box is a physical machine that comes preinstalled with Linux OS and runs OBLAC Drives and the related services. It supports access over WiFi or local network.
+> OBLAC Drives Box is a physical machine that comes preinstalled with Linux OS and runs OBLAC Drives and the related services. It supports access over WiFi or local area network.
 
 **Rationale**: Not quite sure about the description. Anyway, whatever the description it has to be consistent.
 
 > Installation
 > Optionally, connect the box to your local area network using the upper LAN port. This is necessary if you want to commission the SOMANET Servo Node through the network rather than via wireless.
 
-> ... This will allow you to access OBLAC Drives tool over the local area network rather than having to connect to OBLAC Drives Box over WiFi.
+> ... This will allow you to access OBLAC Drives over the local area network rather than having to connect to OBLAC Drives Box over WiFi.
 
 **Rationale**: Provisioning is really done over EtherCAT. Only the access to OBLAC Drives application is somewhat different whether you use WiFi access or local area network.
 
@@ -119,7 +124,7 @@ We must remove IP discovery. That is not requred anymore and the service (IP Add
 
 > System Requirements
 
-> I would replace it Prerequeisite or Required Software and write that OBLAC Drives VM is a virtual machine that you as a user should run on VMware Player version 14 or above for Windows and Linux and VMware Function 10 for macOS and provide links to VMware website.
+> I would replace it Prerequeisite or Required Software and write that OBLAC Drives VM is a virtual machine that you as a user should run on VMware Player version 14 or above for Windows and Linux and VMware Fusion 10 for macOS and provide links to VMware website.
 
 > Note
 > OBLAC Drives runs in your browser and has been successfully tested with Google Chrome (Version 63.0.3239.132 and above). Other browsers or older versions of Chrome may also be supported but can’t be recomended.
