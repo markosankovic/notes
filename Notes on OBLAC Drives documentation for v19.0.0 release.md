@@ -32,7 +32,7 @@ Two links at the top. One that downloads the VM and the other that takes user to
 
 > OBLAC Drives makes operating SOMANET drives based on EtherCAT a breeze. It guides the user through the setup process, supports configuration and tuning of the SOMANET drive stack and makes the operation and first steps in turning a motor as easy as possible.
 
-> OBLAC Drives makes operating SOMANET Servo Drives a breeze. It guides the user through the setup process, supports configuration and tuning of SOMANET Servo Drives and makes operation and first steps in tuning a motor as easy as possible.
+> OBLAC Drives makes operating SOMANET Servo Node a breeze. It guides the user through the setup process, supports configuration and tuning of SOMANET Servo Node and makes operation and first steps in tuning a motor as easy as possible.
 
 **Rationale**: We should be consistent with the naming, e.g. *SOMANET drives based on EtherCAT* and *SOMANET drive stack* both found in the previous paragraph refer to the same thing. On our website we refer to that as SOMANET Servo Drives. Even the ACTILINK that tools will support is described as motor-integrated servo drives. The description on our website for OBLAC Tools is: *Commissioning and tuning tool for SOMANET Servo Drives*. Now, OBLAC Tools is an umbrella term for all tools developed in the company. OBLAC Drives and OBLAC EtherCAT Design Tool are software products under OBLAC Tools.
 
@@ -179,9 +179,53 @@ Unnecessary I think.
 
 ## https://doc.synapticon.com/oblac_drives/oblac_drives_commissioning/index.html
 
+> Setting the Parameters for your Drive
+
+> Setting the Parameters for your servo drive or Setting the Parameters for your SOMANET Servo Node
+
+> Once OBLAC Drives has been installed, you can open a browser window using the IP address shown in your virtual machine and you will find all the connected drives. In our example, the connected drive does not have firmware installed (which is the default state after delivery of our drives).
+
+> SOMANET Servo Nodes are delivered without preinstalled firmware. Open OBLAC Drives in your browser to install firmware.
+
+**Rationale**: The paragraph starts by assuming that user is running OBLAC Drives VM. The first line is therefore removed. All instructions related to using OBLAC Drives should not refer to physical or virtual machine. In future it might be that OD will delivered as desktop app or integrated into TwinCAT.
+
+> When clicking on the “Install firmware” link, a dialog box is opened in which you can choose the latest version of the firmware at the top of the list.
+
+Yes, Install firmware, but I would match the cases here because it's even easier to relate documetnation text to UI. There is no reason why they should be different.
+
+> Note
 > Please make sure to select a firmware that fits your version of the Drive module.
 
-It is impossible to select a firmware that doesn't fit the version of the Drive module. Now, yet again term *Drive module*. Is it the same as SOMANET Servo Drive?
+It is impossible to select a firmware that doesn't fit the version of the Drive module. Now, yet again term *Drive module*. Is it the same as SOMANET Servo Node?
+
+> After the firmware is installed, OBLAC Drives will restart the tools, this will take a few moments. Once the connected drives are initialized again, OBLAC Drives will show a message that the drive isn't configured yet.
+
+OBLAC Drives will not restart the tools, but rather reinitialize itself. Once it's done reinitializing it will show a message a that drive isn't configured yet.
+
+We should maybe add documentation for BULK actions, for example installing firmware for multiple drives at once.
+
+> Note
+> If you want to update your firmware, please click on the stack icon and select Update Firmware
+
+What is no stack icon? I would use "servo drive image" or "SOMANET Servo Node image" instead. Update Firmware should be written as UPDATE FIRMWARE. So: Please click on the servo drive image, the link will take you to the Drive detail page and there click on UPDATE FIRMWARE.
+
+> Click on the “Launch Setup Wizard” link to open the setup wizard. It will first ask you to give a name to your drive.
+
+> Click on the LAUNCH SETUP WIZARD” link to open the Drive Setup Wizard. It will first ask you to give a name to your servo drive.
+
+> First you need to determine if you have an attached brake.
+
+This drives me nuts. Is it sensors or encoders, we must decide what term to use and stick to it. I think the industry uses the encoder term.
+
+> The last step of the setup wizard will guide you through the commutation offset tuning. Start with a value of 20% and only increase it, if the results of the tuning process are not to your taste.
+
+Uh, here I would really like to see more info on what is Commutation Offset Tuning and why is it required, not only how to do it.
+
+"not to your taste" well Commutation Offset Detection does not have a taste, informal language is okay for us but not for the documentation
+
+> After finishing the wizard, OBLAC Drives will open the “Playground”, where you can test the basic functionality of your new SOMANET drive setup.
+
+> "wizard" must be replace with full name, cases matter, Setup Wizard or Drive Setup Wizard. We have to standardize this as well.
 
 ## Links
 
