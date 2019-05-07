@@ -188,3 +188,192 @@ The reducer function's responsibility is to handle the state transition in an im
     }
 
 #### Selectors
+
+Selectors are pure functions used for obtaining slices of store state. @ngrx/store provides a few helper functions for optimizing this selection. Selectors provide many features when selecting slices of state.
+
+- Portable
+- Memoization
+- Composition
+- Testable
+- Type-safe
+
+When using the `createSelector` and `createFeatureSelector` functions @ngrx/store keeps track of the latest arguments in which your selector function was invoked. Because selectors are pure functions, the last result can be returned when the arguments match without reinvoking your selector function. This can provide performance benefits, particularly with selectors that perform expensive computation. This practice is known as memoization.
+
+##### Using a selector for one piece of state
+
+    import { createSelector } from '@ngrx/store';
+
+    export interface FeatureState {
+      counter: number;
+    }
+
+    export interface AppState {
+      feature: FeatureState;
+    }
+
+    export const selectFeature = (state: AppState) => state.feature;
+
+    export const selectFeatureCount = createSelector(
+      selectFeature,
+      (state: FeatureState) => state.counter
+    );
+
+##### Using selectors for multiple pieces of state
+
+The `createSelector` can be used to select some data from the state based on several slices of the same state.
+
+The `createSelector` function can take up to 8 selector function for more complete state selections.
+
+For example, imagine you have a selectedUser object in the state. You also have an allBooks array of book objects.
+
+And you want to show all books for the current user.
+
+You can use createSelector to achieve just that. Your visible books will always be up to date even if you update them in allBooks. They will always show the books that belong to your user if there is one selected and will show all the books when there is no user selected.
+
+The result will be just some of your state filtered by another section of the state. And it will be always up to date.
+
+    import { createSelector } from '@ngrx/store';
+
+    export interface User {
+      id: number;
+      name: string;
+    }
+
+    export interface Book {
+      id: number;
+      userId: number;
+      name: string;
+    }
+
+    export interface AppState {
+      selectedUser: User;
+      allBooks: Book[];
+    }
+
+    export const selectUser = (state: AppState) => state.selectedUser;
+    export const selectAllBooks = (state: AppState) => state.allBooks;
+
+    export const selectVisibleBooks = createSelector(
+      selectUser,
+      selectAllBooks,
+      (selectedUser: User, allBooks: Book[]) => {
+        if (selectedUser && allBooks) {
+          return allBooks.filter((book: Book) => book.userId === selectedUser.id);
+        } else {
+          return allBooks;
+        }
+      }
+    );
+
+##### Using selectors with props
+
+To select a piece of state based on data that isn't available in the store you can pass props to the selector function. These props gets passed through every selector and the projector function. To do so we must specify these props when we use the selector inside our component.
+
+For example if we have a counter and we want to multiply its value, we can add the multiply factor as a prop:
+
+The last argument of a selector or a projector is the props argument, for our example it looks as follows:
+
+    export const getCount = createSelector {
+      getCounterValue,
+      (counter, props) => counter * props.multiply
+    }
+
+Inside the component we can define the props:
+
+    ngOnInit() {
+      this.counter = this.store.pipe(select(fromRoot.getCount, { multiply: 2 }));
+    }
+
+Keep in mind that a selector only keeps the previous input arguments in its cache. If you re-use this selector with another multiply factor, the selector would always have to re-evaluate its value. This is because it's receiving both of the multiply factors (e.g. one time 2, the other time 4). In order to correctly memoize the selector, wrap the selector inside a factory function to create different instances of the selector.
+
+The following is an example of using multiple counters differentiated by id.
+
+    export const getCount = () =>
+      createSelector(
+        (state, props) => state.counter[props.id],
+        (counter, props) => counter * props.multiply
+      );
+
+The component's selectors are now calling the factory function to create different selector instances:
+
+    ngOnInit() {
+      this.counter2 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter2', multiply: 2 }));
+      this.counter4 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter4', multiply: 4 }));
+      this.counter6 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter6', multiply: 6 }));
+    }
+
+#### Selecting Feature States
+
+The `createFeatureSelector` is a convenience method for returning a top level feature state. It returns a typed selector function for a feature slice of state.
+
+...
+
+#### Resetting Memoized Selectors
+
+...
+
+#### Advanced Usage
+
+Selectors empower you to compose a read model for your application state. In terms of the CQRS architectural pattern, NgRx separates the read model (selectors) from the write model (reducers). An advanced technique is to combine selectors with RxJS pipeable operators.
+
+This section covers some basics of how selectors compare to pipeable operators and demonstrates how `createSelector` and `scan` are utilized to display a history of state transitions.
+
+##### Breaking Down the Basics
+
+...
+
+#### Advanced / Meta-Reducers
+
+@ngrx/store composes your map of reducers into a single reducer.
+
+Developers can think of meta-reducers as hooks into the action->reducer pipeline. Meta-reducers allow developers to pre-process actions before normal reducers are invoked.
+
+Use the metaReducers configuration option to provide an array of meta-reducers that are composed from right to left.
+
+*Note*: Meta-reducers in NgRx are similar to middleware used in Redux.
+
+#### Recipes
+
+##### Injecting Reducers
+
+To inject the root reducers into your application, use an InjectionToken and a Provider to register the reducers through dependency injection.
+
+...
+
+### Store Devtools overview
+
+### Effects
+
+Effects are an RxJS powered side effect model for Store. Effects use streams to provide new sources of actions to reduce state based on external interactions such as network requests, web socket messages and time-based events.
+
+#### Introduction
+
+In a service-based Angular application, components are responsible for interacting with external resources directly through services. Instead, effects provide a way to interact with those services and isolate them from the components. Effects are where you handle tasks such as fetching data, long-running tasks that produce multiple events, and other external interactions where your components don't need explicit knowledge of these interactions.
+
+#### Key Concepts
+
+- Effects isolate side effects from components, allowing for more _pure_ components that select state and dispatch actions.
+- Effects are long-running services that listen to an observable of _every_ action dispatched from the Store.
+- Effects filter those actions based on the type of action they are interested in. This is done by using an operator.
+- Effects perform tasks, which are synchronous or asynchronous and return a new action.
+
+#### Comparison with component-based side effects
+
+In a service-based application, your components interact with data through many different services that expose data through properties and methods. These services may depend on other services that manage other sets of data. Your components consume these services to perform tasks, giving your components many responsibilities.
+
+Imagine that your application manages movies. Here is a component that fetches and displays a list of movies.
+
+The component has multiple responsibilities:
+
+    Managing the _state_ of the movies.
+    Using the service to perform a _side effect_, reaching out to an external API to fetch the movies
+    Changing the _state_ of the movies within the component.
+
+Effects when used along with Store, decrease the responsibility of the component. In a larger application, this becomes more important because you have multiple sources of data, with multiple services required to fetch those pieces of data, and services potentially relying on other services.
+
+Effects handle external data and interactions, allowing your services to be less stateful and only perform tasks related to external interactions. Next, refactor the component to put the shared movie data in the Store. Effects handle the fetching of movie data.
+
+The movies are still fetched through the MoviesService, but the component is no longer concerned with how the movies are fetched and loaded. It's only responsible for declaring its _intent_ to load movies and using selectors to access movie list data. Effects are where the asynchronous activity of fetching movies happens. Your component becomes easier to test and less responsible for the data it needs.
+
+#### Writing Effects
+
