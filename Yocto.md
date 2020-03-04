@@ -65,6 +65,9 @@ cd meta-raspberrypi
 git checkout -t origin/zeus
 
 cd ../build/
-bitbake rpi-basic-image
+
+# WARNING: rpi-basic-image-1.0-r0 do_image: The image 'rpi-basic-image' is deprecated, please use 'core-image-base' instead
+
+bitbake core-image-base
 
 ```
