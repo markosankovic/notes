@@ -9,6 +9,8 @@ git checkout -t origin/warrior
 
 git clone git://git.yoctoproject.org/meta-raspberrypi
 
+source oe-init-build-env
+
   You had no conf/local.conf file. This configuration file has therefore been
   created for you with some default values. You may wish to edit it to, for
   example, select a different MACHINE (target hardware). See conf/local.conf
@@ -37,8 +39,6 @@ git clone git://git.yoctoproject.org/meta-raspberrypi
       meta-ide-support
 
   You can also run generated qemu images with a command like 'runqemu qemux86'
-
-source oe-init-build-env
 
 vim build/conf/bblayers.conf
 
