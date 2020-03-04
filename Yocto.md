@@ -5,7 +5,7 @@ https://jumpnowtek.com/rpi/Raspberry-Pi-Systems-with-Yocto.html
 ```
 git clone git://git.yoctoproject.org/poky
 
-git checkout -t origin/warrior
+git checkout -t origin/zeus
 
 git clone git://git.yoctoproject.org/meta-raspberrypi
 
@@ -62,7 +62,7 @@ vim build/conf/local.conf
   GPU_MEM = "16"
 
 cd meta-raspberrypi
-git checkout -t origin/warrior
+git checkout -t origin/zeus
 
 cd ../build/
 bitbake rpi-basic-image
