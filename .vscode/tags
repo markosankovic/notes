@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+best_station	../books/Grokking Algorithms/code_for_setup.py	/^        best_station = station$/;"	kind:variable	line:17
+best_station	../books/Grokking Algorithms/code_for_setup.py	/^best_station = None$/;"	kind:variable	line:12
+best_station	../books/Grokking Algorithms/set_covering_problem.py	/^            best_station = station$/;"	kind:variable	line:18
+best_station	../books/Grokking Algorithms/set_covering_problem.py	/^    best_station = None$/;"	kind:variable	line:13
+binary_search	../books/Grokking Algorithms/binary_search.py	/^def binary_search(list, item):$/;"	kind:function	line:1
+binary_search.py	../books/Grokking Algorithms/binary_search.py	1;"	kind:file	line:1
+breadth_first_search.py	../books/Grokking Algorithms/breadth_first_search.py	1;"	kind:file	line:1
+code_for_setup.py	../books/Grokking Algorithms/code_for_setup.py	1;"	kind:file	line:1
+cost	../books/Grokking Algorithms/dijkstras_algorithm.py	/^  cost = costs[node]$/;"	kind:variable	line:52
+costs	../books/Grokking Algorithms/dijkstras_algorithm.py	/^costs = {}$/;"	kind:variable	line:26
+covered	../books/Grokking Algorithms/code_for_setup.py	/^    covered = states_needed & states_for_station$/;"	kind:variable	line:15
+covered	../books/Grokking Algorithms/set_covering_problem.py	/^        covered = states_needed & states$/;"	kind:variable	line:16
+dijkstras_algorithm.py	../books/Grokking Algorithms/dijkstras_algorithm.py	1;"	kind:file	line:1
+fact	../books/Grokking Algorithms/fact.py	/^def fact(x):$/;"	kind:function	line:1
+fact.py	../books/Grokking Algorithms/fact.py	1;"	kind:file	line:1
+final_stations	../books/Grokking Algorithms/code_for_setup.py	/^final_stations = set()$/;"	kind:variable	line:10
+final_stations	../books/Grokking Algorithms/set_covering_problem.py	/^final_stations = set()$/;"	kind:variable	line:10
+findSmallest	../books/Grokking Algorithms/selection_sort.py	/^def findSmallest(arr):$/;"	kind:function	line:1
+find_lowest_cost_node	../books/Grokking Algorithms/dijkstras_algorithm.py	/^def find_lowest_cost_node(costs):$/;"	kind:function	line:40
+fruits	../books/Grokking Algorithms/code_for_setup.py	/^fruits = set(["avocado", "tomato", "banana"])$/;"	kind:variable	line:22
+graph	../books/Grokking Algorithms/breadth_first_search.py	/^graph = {}$/;"	kind:variable	line:3
+graph	../books/Grokking Algorithms/dijkstras_algorithm.py	/^graph = {}$/;"	kind:variable	line:2
+infinity	../books/Grokking Algorithms/dijkstras_algorithm.py	/^infinity = float("inf")$/;"	kind:variable	line:25
+my_list	../books/Grokking Algorithms/binary_search.py	/^my_list = [1, 3, 5, 7, 9]$/;"	kind:variable	line:18
+neighbors	../books/Grokking Algorithms/dijkstras_algorithm.py	/^  neighbors = graph[node]$/;"	kind:variable	line:53
+new_cost	../books/Grokking Algorithms/dijkstras_algorithm.py	/^    new_cost = cost + neighbors[n]$/;"	kind:variable	line:55
+node	../books/Grokking Algorithms/dijkstras_algorithm.py	/^  node = find_lowest_cost_node(costs)$/;"	kind:variable	line:60
+node	../books/Grokking Algorithms/dijkstras_algorithm.py	/^node = find_lowest_cost_node(costs)$/;"	kind:variable	line:50
+parents	../books/Grokking Algorithms/dijkstras_algorithm.py	/^parents = {}$/;"	kind:variable	line:32
+person_is_seller	../books/Grokking Algorithms/breadth_first_search.py	/^def person_is_seller(name):$/;"	kind:function	line:13
+processed	../books/Grokking Algorithms/dijkstras_algorithm.py	/^processed = []$/;"	kind:variable	line:38
+quicksort	../books/Grokking Algorithms/quicksort.py	/^def quicksort(array):$/;"	kind:function	line:1
+quicksort.py	../books/Grokking Algorithms/quicksort.py	1;"	kind:file	line:1
+search	../books/Grokking Algorithms/breadth_first_search.py	/^def search(name):$/;"	kind:function	line:16
+selectionSort	../books/Grokking Algorithms/selection_sort.py	/^def selectionSort(arr):$/;"	kind:function	line:11
+selection_sort.py	../books/Grokking Algorithms/selection_sort.py	1;"	kind:file	line:1
+set_covering_problem.py	../books/Grokking Algorithms/set_covering_problem.py	1;"	kind:file	line:1
+states_covered	../books/Grokking Algorithms/code_for_setup.py	/^        states_covered = covered$/;"	kind:variable	line:18
+states_covered	../books/Grokking Algorithms/code_for_setup.py	/^states_covered = set()$/;"	kind:variable	line:13
+states_covered	../books/Grokking Algorithms/set_covering_problem.py	/^            states_covered = covered$/;"	kind:variable	line:19
+states_covered	../books/Grokking Algorithms/set_covering_problem.py	/^    states_covered = set()$/;"	kind:variable	line:14
+states_needed	../books/Grokking Algorithms/code_for_setup.py	/^states_needed = set(["mt", "wa", "or", "id", "nv", "ut", "ca", "az"])$/;"	kind:variable	line:1
+states_needed	../books/Grokking Algorithms/set_covering_problem.py	/^states_needed = set(["mt", "wa", "or", "id", "nv", "ut", "ca", "az"])$/;"	kind:variable	line:1
+stations	../books/Grokking Algorithms/code_for_setup.py	/^stations = {}$/;"	kind:variable	line:3
+stations	../books/Grokking Algorithms/set_covering_problem.py	/^stations = {}$/;"	kind:variable	line:3
+vegetables	../books/Grokking Algorithms/code_for_setup.py	/^vegetables = set(["beets", "carrots", "tomato"])$/;"	kind:variable	line:23

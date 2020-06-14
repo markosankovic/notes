@@ -16,8 +16,8 @@ Split ESI file into parts for storing onto slaves:
 
 Install firmware:
 
-    $ sudo ethercat states -p 0 BOOT
-    $ sudo ethercat -p 0 foe_write firmware_ComEtherCAT-a_CoreC2X-a_Drive1000-d1_v3.2.0-rc4.bin
+    sudo ethercat states -p 0 BOOT
+    sudo ethercat -p 0 foe_write firmware_ComEtherCAT-a_CoreC2X-a_Drive1000-d1_v3.2.0-rc4.bin
 
 ## Bootloader
 
@@ -26,11 +26,11 @@ Install firmware:
 
 The following command will clear flash which means it will delete the previously installed SDK:
 
-    $ xflash --erase-all --target-file SOMANET-CoreC2X.xn
+    xflash --erase-all --target-file SOMANET-CoreC2X.xn
 
 Install bootloader:
 
-    $ xflash --write-all app_SOMANET_bootloader-CoreC2X-ECAT-UART.bin --target-file SOMANET-CoreC2X.xn --boot-partition 0x90000
+    xflash --write-all app_SOMANET_bootloader-CoreC2X-ECAT-UART.bin --target-file SOMANET-CoreC2X.xn --boot-partition 0x90000
 
 Check if bootloader is installed:
 
@@ -58,8 +58,8 @@ Download [build_stack_info_json.py] and then:
 
 The command above will write stack_info.json file to flash, read the file with the following command:
 
-```
-$ sudo ethercat foe_read stack_info.json
+```sh
+sudo ethercat foe_read stack_info.json
 
 {
   "mac_address": 268891676141194,
@@ -84,13 +84,13 @@ $ sudo ethercat foe_read stack_info.json
 
 ## Update Motion Master with the latest test version
 
-    $ wget -O - https://synapticon-tools.s3.amazonaws.com/motion-master/test/update_motion_master.sh | bash
+    wget -O - https://synapticon-tools.s3.amazonaws.com/motion-master/test/update_motion_master.sh | bash
 
 ## File Over EtherCAT
 
-    $ ethercat foe_read fs-getlist
-    $ ethercat foe_read fs-remove
-    $ ethercat foe_read stack_info.json
+    ethercat foe_read fs-getlist
+    ethercat foe_read fs-remove
+    ethercat foe_read stack_info.json
 
 ## Compiling and Running
 
